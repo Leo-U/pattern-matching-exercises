@@ -366,10 +366,35 @@ end
 # puts process_orders(orders)
 
 
-# Write a method parse_input that takes a string as input and returns a hash with the following structure, using pattern matching to extract the command, name, and age from the input string. You can use the `case` statement with the `in` operator or the `=>` operator to perform the pattern matching.
+# Imagine that you are working on a program to parse and validate user input in a command-line interface (CLI). The user can enter commands in the following formats:
+
+# add NAME AGE: adds a user with the given name and age to the database.
+# remove NAME: removes the user with the given name from the database.
+# search NAME: searches for the user with the given name in the database and returns their age.
+# Your task is to write a method parse_input that takes a string as input and returns a hash with the following structure:
+
+# {
+#   command: "add" | "remove" | "search",
+#   name: String,
+#   age: Integer (only for "add" commands)
+# }
+# To solve this exercise, you will need to use pattern matching to extract the command, name, and age from the input string.
 
 def parse_input(string)
-  case string
-  
+  output = {}
+  array = string.split' '
+  case array
+  in ['add', name, age]
+    output[:command] = 'add'
+    output[:name] = name
+    output[:age] = age
+  in [command, name]
+    output[:command] = command
+    output[:name] = name
+  else
+    raise "Invalid input"
   end
+  output
 end
+
+puts parse_input('add Joel 32')
