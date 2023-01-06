@@ -364,3 +364,12 @@ def process_orders(orders)
 end
 
 # puts process_orders(orders)
+
+
+# Write a method parse_input that takes a string as input and returns a hash with the following structure, using pattern matching to extract the command, name, and age from the input string. You can use the `case` statement with the `in` operator or the `=>` operator to perform the pattern matching.
+
+def parse_input(string)
+  case string
+  
+  end
+end
