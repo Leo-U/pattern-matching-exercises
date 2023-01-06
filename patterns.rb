@@ -388,13 +388,13 @@ def parse_input(string)
     output[:command] = 'add'
     output[:name] = name
     output[:age] = age
-  in [command, name]
-    output[:command] = command
-    output[:name] = name
+  in ['search', *] | ['remove', *] if array.length == 2
+    output[:command] = array[0]
+    output[:name] = array[1]
   else
     raise "Invalid input"
   end
   output
 end
 
-puts parse_input('add Joel 32')
+puts parse_input('add joel 32')
