@@ -397,4 +397,64 @@ def parse_input(string)
   output
 end
 
-puts parse_input('add joel 32')
+# puts parse_input('add joel 32')
+
+
+
+# Given the data structure `data` below, write a case expression that will match the structure
+# of the data hash and bind the following variables:
+
+#   name should be bound to the value of the name key within the user hash
+#   age should be bound to the value of the age key within the user hash
+#   street should be bound to the value of the street key within the address hash
+#   city should be bound to the value of the city key within the address hash
+#   state should be bound to the value of the state key within the address hash
+
+
+data = {
+  user: {
+    name: 'John',
+    age: 30,
+    address: {
+      street: 'Main Street',
+      city: 'New York',
+      state: 'NY'
+    }
+  }
+}
+
+
+
+def match_structure(data)
+  case data
+    in user: {name:, age:, address: {street:, city:, state:}}
+      puts "User: #{name}
+      age: #{age}
+      street: #{street}
+      city: #{city}
+      state: #{state}"
+    else
+      puts 'Unrecognized data structure'
+    end
+end
+
+# match_structure(data)
+
+data = {
+  type: "car",
+  make: "Toyota",
+  model: "Corolla",
+  year: 2020,
+  features: ["Bluetooth", "Automatic transmission", "Rearview camera"]
+}
+
+def describe_vehicle(data)
+  case data
+  in type:, make:, model:, year:, features:
+    puts "The #{type} is a #{year} #{make} #{model}, featuring #{features[0]}, #{features[1].downcase}, and a #{features[2].downcase}."
+  else
+    puts 'Unrecognized data structure.'
+  end
+end
+
+describe_vehicle(data)
