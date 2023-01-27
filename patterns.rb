@@ -213,47 +213,49 @@ end
 # check_palindrome("dad")
 # check_palindrome("dogshit")
 
-data = [
-  {
-    name: "Alice",
-    age: 25,
-    address: {
-      street: "123 Main St",
-      city: "Chicago",
-      state: "IL"
-    }
-  },
-  {
-    name: "Bob",
-    age: 32,
-    address: {
-      street: "456 Market St",
-      city: "New York",
-      state: "NY"
-    }
-  }
-]
+# Write a method extract_info that takes a nested data structure as an argument and extracts certain values from it.
+# The data structure will consist of nested arrays and hashes, and may have the following form:
+# Your method should return a new array of hashes, with only the name, age, and city values extracted from the original data structure.
+
+# data = [
+#   {
+#     name: "Alice",
+#     age: 25,
+#     address: {
+#       street: "123 Main St",
+#       city: "Chicago",
+#       state: "IL"
+#     }
+#   },
+#   {
+#     name: "Bob",
+#     age: 32,
+#     address: {
+#       street: "456 Market St",
+#       city: "New York",
+#       state: "NY"
+#     }
+#   }
+# ]
 
 
-def extract_info(data)
-  result = []
-  data.each do |element|
-    case element
-    in {name: name, age: age, address: {city: city}}
-      result << {name: name, age: age, city: city}
-    end
-  end
-  result
-end
+# def extract_info(data)
+#   result = []
+#   data.each do |element|
+#     case element
+#     in {name: name, age: age, address: {city: city}}
+#       result << {name: name, age: age, city: city}
+#     end
+#   end
+#   result
+# end
 
 # puts extract_info(data)
 
 
 
 
-# Write a method extract_info that takes a nested data structure as an argument and extracts certain values from it.
-# The data structure will consist of nested arrays and hashes, and may have the following form:
-# Your method should return a new array of hashes, with only the name, age, and city values extracted from the original data structure.
+
 
 records = {
   Alice: {
@@ -457,4 +459,31 @@ def describe_vehicle(data)
   end
 end
 
-describe_vehicle(data)
+# describe_vehicle(data)
+
+# Create a program that takes a string as an input and uses pattern matching to determine if the string is a valid phone number. The phone number should match the following format: (XXX) XXX-XXXX, where X is a digit from 0-9. If the phone number is valid, the program should return "valid phone number", otherwise it should return "invalid phone number".
+
+# Example:
+
+# Input: "(123) 456-7890"
+# Output: "valid phone number"
+
+# Input: "123-456-7890"
+# Output: "invalid phone number"
+
+phone_num_str = '(404) 988-2689'
+
+# case phone_num_str
+# in /\(\d{3}\) \d{3}-\d{4}/
+#   puts "It's valid!"
+# else 
+#   puts "It's a piece of shit."
+# end
+
+
+# Write a method extract_info that takes a nested data structure as an argument and extracts certain values from it.
+# The data structure will consist of nested arrays and hashes, and may have the following form:
+# Your method should return a new array of hashes, with only the name, age, and city values extracted from the original data structure.
+
+
+extract_info(data)
